@@ -10,7 +10,7 @@ gulp.task("less-prod", function() {
     .pipe(plumber())
     .pipe(less({
       compress: true,
-      paths: ["src/less"],
+      paths: ["src/less", "bower_components"],
     }))
     .pipe(gulp.dest("app"));
 });
@@ -19,7 +19,7 @@ gulp.task("less-dev", function() {
   gulp.src("src/less/suurjako.less")
     .pipe(plumber())
     .pipe(less({
-      paths: ["src/less"],
+      paths: ["src/less", "bower_components"],
     }))
     .pipe(gulp.dest("target/dev/app"));
 });

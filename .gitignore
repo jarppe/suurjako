@@ -13,3 +13,5 @@ pom.xml.asc
 .classpath
 .settings
 /bin/
+/node_modules/
+/bower_components/

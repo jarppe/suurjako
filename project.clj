@@ -2,7 +2,8 @@
   :dependencies [[org.clojure/clojure "1.6.0"]
                  [org.clojure/clojurescript "0.0-2850"]
                  [org.clojure/core.async "0.1.346.0-17112a-alpha"]
-                 [reagent "0.5.0-alpha3"]]
+                 [reagent "0.5.0-alpha3"]
+                 [com.domkm/silk "0.0.4"]]
 
   :plugins [[lein-cljsbuild "1.0.5"]]
 
