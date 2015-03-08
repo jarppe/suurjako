@@ -41,7 +41,6 @@
                                     :error false}}))
 
 (defmethod v/render-view :index [_]
-  (js/console.log "v/render-view :index")
   [:div.container.start-form
    [:h1.text-center (loc :view.index.title)]
    [:form {:on-submit (start form-data)}

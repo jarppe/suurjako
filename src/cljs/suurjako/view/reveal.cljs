@@ -7,6 +7,12 @@
 
 (defonce data (atom nil))
 
+(defn next-participant [_]
+  (let [{:keys [group-index participant-index]} @data
+        groups  @g/groups
+        group   (nth groups group-index)]
+    ))
+
 (defmethod v/render-view :reveal [_]
   (let [{:keys [group-index participant-index]} @data
         groups       @g/groups
@@ -15,10 +21,10 @@
     [:div
      [:h1 (str "reveal: " participant " [" participant-index "/" group-index "]")]
      [:button.btn.btn-default {:disabled (not (< current group-count))
-                               :on-click (fn [_] (next-participant))}
+                               :on-click next-participant}
       "next >"]]))
 
 (defmethod r/route-change :reveal [_]
-  (reset! data {:group-index        1
+  (reset! data {:group-index        0
                 :participant-index  0})
   (reset! r/current-route {:id :reveal}))
