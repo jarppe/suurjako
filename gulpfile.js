@@ -39,7 +39,7 @@ gulp.task("server", function() {
 
 gulp.task("dist", ["less-prod"], function() {
   gulp.src("bower_components/fontawesome/fonts/*")
-    .pipe(gulp.dest("app/fonts"))
+    .pipe(gulp.dest("fonts"))
 });
 
 gulp.task("default", ["less-dev", "server"]);
