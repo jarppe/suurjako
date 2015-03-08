@@ -4,9 +4,7 @@
             [suurjako.groups :as g]
             [suurjako.loc :refer [loc]]))
 
-(defmethod v/render-view :show [{:keys [group-index] :as d}]
-  [:div
-   [:h1 "show:" group-index]])
-
-(defmethod r/route-change :show [route]
-  (reset! r/current-route {:id :show, :group-index (:group-index route)}))
+(defmethod v/render-view :show [_]
+  [:div#show
+   [:i.fa.fa-smile-o.fa-2x]
+   [:div (loc :smile)]])

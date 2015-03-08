@@ -6,7 +6,8 @@
                            :group-count          "Ryhmien määrä:"
                            :start                "Aloita"}
                    :not-found {:title "Sivua ei löydy"}}
-            :group "Ryhmä"})
+            :group "Ryhmä"
+            :smile "kiitos"})
 
 (defn loc [k]
   (or (get-in terms (if (keyword? k)

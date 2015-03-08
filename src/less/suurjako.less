@@ -8,8 +8,9 @@
 @color-background:     #9F6995;
 @color-background-hi:  #844478;
 
-html, body {
+html, body, #app {
   width:       100%;
+  height:      100%;
   font:        sans-serif;
   color:       @color-main;
   background:  @color-background;
@@ -65,4 +66,13 @@ a:hover {
       }
     }
   }
+}
+
+#show {
+  display:             -webkit-box;
+  height:              100%;
+  font-size:           15rem;
+  -webkit-box-orient:  vertical;
+  -webkit-box-pack:    center;
+  -webkit-box-align:   center;
 }
