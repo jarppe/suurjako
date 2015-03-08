@@ -11,7 +11,8 @@
 (defn all-valid? [{:keys [participant-count group-count]}]
   (and (not (:error participant-count))
        (not (:error group-count))
-       (>= (:value participant-count) (:value group-count))))
+       (>= (-> participant-count :value js/parseInt)
+           (-> group-count :value js/parseInt))))
 
 (defn input [form-data id]
   (let [data (id @form-data)]
