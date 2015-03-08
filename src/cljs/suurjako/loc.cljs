@@ -5,7 +5,8 @@
                            :participant-count    "Osallistujien määrä:"
                            :group-count          "Ryhmien määrä:"
                            :start                "Aloita"}
-                   :not-found {:title "Sivua ei löydy"}}})
+                   :not-found {:title "Sivua ei löydy"}}
+            :group "Ryhmä"})
 
 (defn loc [k]
   (or (get-in terms (if (keyword? k)

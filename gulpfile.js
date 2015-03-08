@@ -27,6 +27,8 @@ gulp.task("less-dev", function() {
 gulp.task("server", function() {
   gulp.src("index.html")
     .pipe(gulp.dest("target/dev"));
+  gulp.src("bower_components/fontawesome/fonts/*")
+    .pipe(gulp.dest("target/dev/fonts"));
   gulp.watch("src/less/**/*.less", ["less-dev"]);
   gulp.src("target/dev")
     .pipe(webserver({

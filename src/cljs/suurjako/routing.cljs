@@ -4,7 +4,7 @@
 
 (def routes (silk/routes [[:index [[]]]
                           [:reveal [["reveal"]]]
-                          [:show [["show" :group-id]]]]))
+                          [:show [["show" :group-index]]]]))
 
 (defonce current-route (atom nil))
 

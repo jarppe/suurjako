@@ -1,4 +1,5 @@
 @import "bootstrap/less/bootstrap.less";
+@import "fontawesome/less/font-awesome.less";
 @import "less-prefixer/prefixer.less";
 
 html, body {
@@ -12,7 +13,42 @@ html, body {
   padding-right: 130px;
 }
 
-h1 {
-  color: red;
+a.silent, a.silent:hover, a.silent:visited, a.silent:active {
+  text-decoration: none;
+  text-color: black;
 }
 
+#reveal {
+  .header {
+    width: 100%;
+    background: blue;
+    color: white;
+    font-size: 3rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+  .participant {
+    font-size: 13rem;
+  }
+  .participants {
+    .ball {
+      box-sizing: border-box;
+      display: inline-block;
+      width: 12rem;
+      height: 12rem;
+      margin: 1rem;
+      .border-radius(6rem);
+      border: solid 5px blue;
+      text-align: center;
+      line-height: 11rem;
+      font-size: 7rem;
+      vertical-align: middle;
+      &.grayed {
+        border: solid 5px gray;
+      }
+      &.active {
+        border: solid 5px red;
+      }
+    }
+  }
+}
