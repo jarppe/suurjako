@@ -23,6 +23,10 @@
       :else
       (r/update-uri! :show {:group-index "0"}))))
 
+(defn back-to-index [e]
+  (.preventDefault e)
+  (r/update-uri! :index))
+
 (defmethod v/render-view :reveal [_]
   (let [{:keys [group-index participant-index]} @data
         groups       @g/groups
@@ -30,21 +34,16 @@
         participant  (nth group participant-index)]
     [:div#reveal
      [:div.row.header
-      [:div.col-md-1]
+      [:div.col-md-1.text-center [:a {:on-click back-to-index} [:i.fa.fa-close]]]
       [:div.col-md-10.text-center (str (loc :group) " " (inc group-index))]
-      [:div.col-md-1 [:a {:href "#" :on-click forward} [:i.fa.fa-arrow-circle-o-right]]]]
-     [:div.row
+      [:div.col-md-1.text-center [:a {:on-click forward} [:i.fa.fa-arrow-circle-o-right]]]]
+     [:div
       [:div.col-md-12.text-center.participant [:a.silent {:href "#" :on-click forward} (str participant)]]]
-     [:div.row.participants
+     [:div.participants
       (map-indexed (fn [i p]
-                     (let [visible? (<= i participant-index)
-                           active? (= i participant-index)
-                           clazz (cond
-                                   active?   "active"
-                                   visible?  nil
-                                   :else     "grayed")]
-                       [:span.ball {:key p, :class clazz}
-                        (if visible? (str p))]))
+                     [:span.ball {:key p
+                                  :class (if (<= i participant-index) "revealed")}
+                      (str p)])
                    group)]]))
 
 (defmethod r/route-change :reveal [_]

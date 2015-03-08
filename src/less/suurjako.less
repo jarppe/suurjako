@@ -2,29 +2,17 @@
 @import "fontawesome/less/font-awesome.less";
 @import "less-prefixer/prefixer.less";
 
-@color-primary-0: #599532;
-@color-primary-1: #B3E095;
-@color-primary-2: #82BB5D;
-@color-primary-3: #377013;
-@color-primary-4: #1D4B00;
-
-@color-secondary-1-0: #AA5D39;
-@color-secondary-1-1: #FFC6AA;
-@color-secondary-1-2: #D48D6A;
-@color-secondary-1-3: #803815;
-@color-secondary-1-4: #551C00;
-
-@color-secondary-2-0: #76276C;
-@color-secondary-2-1: #B176A9;
-@color-secondary-2-2: #934A8A;
-@color-secondary-2-3: #580F4F;
-@color-secondary-2-4: #3B0034;
+@color-main:           #BE98B7;
+@color-main-hi:        #56164A;
+@color-main-lo:        #6A2C5E;
+@color-background:     #9F6995;
+@color-background-hi:  #844478;
 
 html, body {
   width:       100%;
   font:        sans-serif;
-  color:       @color-secondary-1-4;
-  background:  @color-secondary-1-2;
+  color:       @color-main;
+  background:  @color-background;
 }
 
 .start-form {
@@ -33,46 +21,47 @@ html, body {
   padding-right:  130px;
 }
 
-a.silent, a.silent:hover, a.silent:visited, a.silent:active {
-  color:            @color-secondary-1-4;
+a, a:hover, a:visited, a:active {
+  color:            @color-main;
   text-decoration:  none;
+  transition:       color 200ms;
 }
 
-a.silent:hover {
-  color: @color-secondary-1-3;
+a:hover {
+  color: @color-main-hi;
 }
 
 #reveal {
   .header {
     width:           100%;
-    background:      @color-primary-1;
-    font-size:       3rem;
+    background:      @color-background-hi;
+    font-size:       4rem;
     padding-top:     1rem;
     padding-bottom:  1rem;
     margin-left:     0px;
     margin-right:    0px;
   }
   .participant {
-    font-size: 18rem;
+    font-size: 16rem;
   }
   .participants {
     .ball {
       box-sizing:     border-box;
       display:        inline-block;
-      width:          12rem;
-      height:         12rem;
-      margin:         1rem;
+      width:          10rem;
+      height:         10rem;
+      margin:         0.8rem;
       .border-radius(6rem);
-      border:         solid 5px @color-secondary-1-4;
+      border:         solid 5px fadeout(@color-main-lo, 50%);
+      color:          fadeout(@color-main, 100%);
       text-align:     center;
-      line-height:    11rem;
-      font-size:      6rem;
+      line-height:    9rem;
+      font-size:      4rem;
       vertical-align: middle;
-      &.grayed {
-        border: solid 5px fadeout(@color-secondary-1-4, 50%);
-      }
-      &.active {
-        border: solid 5px @color-primary-0;
+      transition:     color 1s, border-color 2s;
+      &.revealed {
+        border-color:  @color-main-lo;
+        color:         @color-main;
       }
     }
   }
