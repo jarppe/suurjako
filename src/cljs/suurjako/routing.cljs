@@ -15,7 +15,6 @@
 
 (defn- update-route! [_]
   (let [uri (subs js/location.hash 1)]
-    (js/console.log "update-route!" uri (pr-str (silk/arrive routes uri)))
     (route-change (or (silk/arrive routes uri)
                       {:domkm.silk/name :default}))))
 
