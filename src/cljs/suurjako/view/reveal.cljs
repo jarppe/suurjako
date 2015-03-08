@@ -34,7 +34,7 @@
       [:div.col-md-10.text-center (str (loc :group) " " (inc group-index))]
       [:div.col-md-1 [:a {:href "#" :on-click forward} [:i.fa.fa-arrow-circle-o-right]]]]
      [:div.row
-      [:div.col-md-12.text-center.participant [:a {:href "#" :on-click forward} (str participant)]]]
+      [:div.col-md-12.text-center.participant [:a.silent {:href "#" :on-click forward} (str participant)]]]
      [:div.row.participants
       (map-indexed (fn [i p]
                      (let [visible? (<= i participant-index)
