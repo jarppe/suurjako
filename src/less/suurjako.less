@@ -34,13 +34,27 @@ a:hover {
 
 #reveal {
   .header {
-    width:           100%;
-    background:      @color-background-hi;
-    font-size:       4rem;
-    padding-top:     1rem;
-    padding-bottom:  1rem;
-    margin-left:     0px;
-    margin-right:    0px;
+    display:             -webkit-box;
+    -webkit-box-orient:  horizontal;
+    -webkit-box-pack:    center;
+    -webkit-box-align:   center;
+    width:               100%;
+    background:          @color-background-hi;
+    font-size:           4rem;
+    padding-top:         1rem;
+    padding-bottom:      1rem;
+    margin-left:         0px;
+    margin-right:        0px;
+    .l {
+      padding-left: 1rem;
+    }
+    .r {
+      padding-right: 1rem;
+    }
+    .c {
+      -webkit-box-flex: 1;
+      text-align: center;
+    }
   }
   .participant {
     font-size: 16rem;

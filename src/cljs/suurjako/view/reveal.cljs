@@ -21,7 +21,7 @@
                     :participant-index 0})
 
       :else
-      (r/update-uri! :show {:group-index "0"}))))
+      (r/update-uri! :show))))
 
 (defn back-to-index [e]
   (.preventDefault e)
@@ -33,10 +33,10 @@
         group        (nth groups group-index)
         participant  (nth group participant-index)]
     [:div#reveal
-     [:div.row.header
-      [:div.col-md-1.text-center [:a {:on-click back-to-index} [:i.fa.fa-close]]]
-      [:div.col-md-10.text-center (str (loc :group) " " (inc group-index))]
-      [:div.col-md-1.text-center [:a {:on-click forward} [:i.fa.fa-arrow-circle-o-right]]]]
+     [:div.header
+      [:div.l [:a {:on-click back-to-index} [:i.fa.fa-close]]]
+      [:div.c (str (loc :group) " " (inc group-index))]
+      [:div.r [:a {:on-click forward} [:i.fa.fa-arrow-circle-o-right]]]]
      [:div
       [:div.col-md-12.text-center.participant [:a.silent {:href "#" :on-click forward} (str participant)]]]
      [:div.participants
