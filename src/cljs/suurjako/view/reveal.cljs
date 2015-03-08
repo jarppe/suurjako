@@ -28,7 +28,7 @@
         groups       @g/groups
         group        (nth groups group-index)
         participant  (nth group participant-index)]
-    [:div#reveal.container
+    [:div#reveal
      [:div.row.header
       [:div.col-md-1]
       [:div.col-md-10.text-center (str (loc :group) " " (inc group-index))]
