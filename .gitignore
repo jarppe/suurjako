@@ -16,3 +16,4 @@ pom.xml.asc
 /bin/
 /node_modules/
 /bower_components/
+/app/
