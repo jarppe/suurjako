@@ -5,6 +5,7 @@
              [suurjako.views]))
 
 (defn main-view []
+  (js/console.log "main-view:" (pr-str @r/current-route))
   (v/render-view @r/current-route))
 
 (defn init! []
